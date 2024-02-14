@@ -3,7 +3,55 @@
 
 <body>
 
-    dit is mijn website jkhfkhdfksa
+    Dit is de website, waar er een rij getallen wordt gesorteerd op de gewenste manier.
+
+<script>
+
+    // Er wordt een rij getallen gemaakt, die moet door de bubble sort gesorteerd worden op de gewenste manier.
+    var temp;
+    var getallen = new Array(10);
+    var i;
+    for (i = 0; i <= 9; i++) {
+        getallen[i] = Math.floor(Math.random() * 25);
+    }
+    // De rij van 10 getallen is gemaakt, met random getallen onder de 25.
+    var j;
+    var volgorde;
+    window.alert("Wil je de getallen van groot naar klein, type dan 1. Wil je de getallen van klein naar groot, type dan 2 ");
+    volgorde = Number(window.prompt('Enter a value for volgorde'));
+    // De manier van sorteren wordt gevraagd en gegeven
+    for (j = 0; j <= 8; j++) {
+        // Hij gaat nu 8 keer de hele loop die hieronder staat herhalen. Dat hij het 8 keer helemaal doet zorgt ervoor dat de getallen sowieso op de goede volgorde staan.
+        for (i = 0; i <= 8; i++) {
+            if (volgorde == 2) {
+                // Getallen worden van klein naar groot gesorteerd
+                if (getallen[i] > getallen[i + 1]) {
+                    temp = getallen[i];
+                    getallen[i] = getallen[i + 1];
+                    getallen[i + 1] = temp;
+                }
+            } else {
+                // Getallen worden van groot naar klein gesorteerd
+                if (getallen[i] < getallen[i + 1]) {
+                    temp = getallen[i];
+                    getallen[i] = getallen[i + 1];
+                    getallen[i + 1] = temp;
+                }
+            }
+        }
+    }
+    // Hij heeft nu de loop zo vaak herhaalt, dat alles op volgorde staat.
+    for (i = 0; i <= 9; i++) {
+        window.alert("Op plek " + i + " staat " + getallen[i]);
+    }
+    window.alert("De getallen staan nu gesorteerd op manier " + volgorde);
+
+
+
+
+
+</script>
+
 </body>
 
 </html>
